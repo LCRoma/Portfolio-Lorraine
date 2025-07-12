@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+  <title>Sampled Works</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      font-family: 'Open Sans', 'Poppins', 'Raleway', 'Optima Prime', Arial, Helvetica, sans-serif;
+      background-color: #FEFAE7;
+    }
+
+    @font-face {
+      font-family: myFirstFont;
+      src: url(Goku.ttf);
+    }
+
+    nav {
+      background: #39362A;
+      height: 70px;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: Optima, sans-serif;
+      padding: 0 30px;
+    }
+
+    .imglogo img {
+      height: 50px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    nav ul li {
+      position: relative;
+    }
+
+    nav ul li a {
+      color: #F3CD18;
+      font-size: 15px;
+      padding: 10px 15px;
+      text-transform: uppercase;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: background 0.3s, color 0.3s;
+      font-family: Optima, sans-serif !important;
+    }
+
+    nav ul li a:hover,
+    nav ul li a:active {
+      background: #2e2b22;
+      color: #FEFAE7;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 70px;
+      right: 0;
+      background-color: #39362A;
+      min-width: 200px;
+      z-index: 999;
+      flex-direction: column;
+    }
+
+    .dropdown-content li {
+      width: 100%;
+    }
+
+    .dropdown-content li a {
+      padding: 12px 20px;
+      display: block;
+      color: #F3CD18;
+    }
+
+    .dropdown-content li a:hover {
+      background-color: #2e2b22;
+      color: #FEFAE7;
+    }
+
+    .page-wrapper {
+      flex: 1;
+      padding-top: 100px;
+      padding-bottom: 40px;
+    }
+
+    .subject {
+      text-align: center;
+    }
+
+    .subject h2 {
+      font-family: myFirstFont;
+      font-size: 50px;
+      font-weight: 500;
+      margin-bottom: 40px;
+    }
+
+    .subject-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .subject-container {
+      background-color: #39362A;
+      padding: 20px;
+      font-family: Optima;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .subject-container i {
+      font-size: 100px;
+      color: #F3CD18;
+    }
+
+    .subject-container h1 {
+      color: #FEFAE7;
+      margin: 10px 0;
+    }
+
+    .subject-container button {
+      width: 120px;
+      height: 30px;
+      background-color: #F3CD18;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .subject-container button:hover {
+      background-color: #FEFAE7;
+      color: #39362A;
+    }
+
+    .footer {
+      padding: 40px 0;
+      background-color: #FEBF00;
+      text-align: center;
+    }
+
+    .footer-text h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #39362A;
+    }
+
+    .social {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .social a {
+      text-decoration: none;
+      padding: 10px;
+      background-color: #39362A;
+      border-radius: 50%;
+      color: #FEFAE7;
+      transition: 0.5s;
+    }
+
+    .social a i {
+      font-size: 20px;
+      opacity: 0.9;
+    }
+
+    .social a:hover {
+      color: #FEBF00;
+      background-color: #FEFAE7;
+    }
+
+    .footer ul {
+      padding: 0;
+      list-style: none;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .footer ul li {
+      display: inline-block;
+      margin: 0 10px;
+    }
+
+    .footer ul li a {
+      color: #39362A;
+      text-decoration: none;
+      opacity: 0.8;
+      font-family: Optima, sans-serif !important;
+    }
+
+    .footer ul li a:hover {
+      opacity: 1;
+      color: #FEFAE7;
+    }
+
+    .copyright {
+      font-size: 13px;
+      color: #39362A;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="imglogo">
+      <img src="img/roma.png" alt="Logo">
+    </div>
+    <ul>
+      <li><a href="index.html#home">Home</a></li>
+      <li class="dropdown">
+        <a href="javascript:void(0);" onclick="toggleDropdown()">About</a>
+        <ul class="dropdown-content" id="aboutDropdown">
+          <li><a href="index.html#about">About Me</a></li>
+          <li><a href="index.html#education">Education</a></li>
+          <li><a href="index.html#skill">Skill Set</a></li>
+          <li><a href="sample.html">Sampled Work</a></li>
+          <li><a href="seminars.html#seminars">Seminars and Certifications</a></li>
+        </ul>
+      </li>
+      <li><a href="index.html#contact">Contact Me</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-wrapper">
+    <div class="subject">
+      <h2>Sample Worked</h2>
+      <div class="subject-grid">
+        <!-- Example Cards (3 only shown, repeat for more) -->
+        <div class="subject-container">
+          <i class="fa fa-folder-open" aria-hidden="true"></i>
+          <h1>ITE 260</h1>
+          <a href="https://drive.google.com" target="_blank"><button>View</button></a>
+        </div>
+        <div class="subject-container">
+          <i class="fa fa-folder-open" aria-hidden="true"></i>
+          <h1>ITE 288</h1>
+          <a href="https://drive.google.com" target="_blank"><button>View</button></a>
+        </div>
+        <div class="subject-container">
+          <i class="fa fa-folder-open" aria-hidden="true"></i>
+          <h1>ITE 186</h1>
+          <a href="https://drive.google.com" target="_blank"><button>View</button></a>
+        </div>
+        <div class="subject-container">
+            <i class="fa fa-folder-open" aria-hidden="true"></i>
+            <h1>ITE 300</h1>
+            <a href="https://drive.google.com/drive/folders/12onimBgWn2CRrbkQzjHdqMIdWV6Ta5J1?usp=drive_link"target="_blank"><button>View</button></a>
+        </div>
+        <div class="subject-container">
+            <i class="fa fa-folder-open" aria-hidden="true"></i>
+            <h1>ITE 298</h1>
+            <a href="https://drive.google.com/drive/folders/1_8TXCHPcV-iBH-0ABKpTmbVP15okrQck?usp=drive_link "target="_blank"><button>View</button></a>
+        </div>
+        <div class="subject-container">
+            <i class="fa fa-folder-open" aria-hidden="true"></i>
+            <h1>ITE 399</h1>
+            <a href="https://drive.google.com/drive/folders/1uNW4yYIzQD-CB4XccszJkqUE56Tr8ITg?usp=drive_link"target="_blank"><button>View</button></a>
+        </div>
+        <div class="subject-container">
+            <i class="fa fa-folder-open" aria-hidden="true"></i>
+            <h1>GEN 008</h1>
+            <a href="https://drive.google.com/drive/folders/1iwL3LZdXMrmkDNcgLbne4CSfT2-Tj0Pl?usp=drive_link"target="_blank"><button>View</button></a>
+        </div>
+        <div class="subject-container">
+            <i class="fa fa-folder-open" aria-hidden="true"></i>
+            <h1>ITE 031</h1>
+            <a href="https://drive.google.com/drive/folders/1lB42KiRy_ptCb3OI6hr8v_8CyILy5JVX?usp=drive_link"target="_blank"><button>View</button></a>
+        </div>
+        <div class="subject-container">
+            <i class="fa fa-folder-open" aria-hidden="true"></i>
+            <h1>ITE 380</h1>
+            <a href="https://drive.google.com/drive/folders/1aiyiurZOPfzoj7jyyBozHVhdTtjUJN3x?usp=drive_link"target="_blank"><button>View</button></a>
+        </div>
+        <div class="subject-container">
+            <i class="fa fa-folder-open" aria-hidden="true"></i>
+            <h1>ITE 400</h1>
+            <a href="https://drive.google.com/drive/folders/1GRJRPPA7iKaiao7cKI-nwhWc-p80zsjU?usp=drive_link"target="_blank"><button>View</button></a>
+        </div>
+        <div class="subject-container">
+            <i class="fa fa-folder-open" aria-hidden="true"></i>
+            <h1>ITE 393</h1>
+            <a href="https://drive.google.com/drive/folders/1zn31g3XfSvUVEfJJiGwLJX-Xpz6jkFfF?usp=drive_link"target="_blank"><button>View</button></a>
+        </div>
+        <div class="subject-container">
+            <i class="fa fa-folder-open" aria-hidden="true"></i>
+            <h1>ITE 308</h1>
+            <a href="https://drive.google.com/drive/folders/1hPoBZD_evyb-xLC5gB0K1M6Dq6_FlLCJ?usp=drive_link"target="_blank"><button>View</button></a>
+        </div>
+        <div class="subject-container">
+            <i class="fa fa-folder-open" aria-hidden="true"></i>
+            <h1>ITE 292</h1>
+            <a href="https://drive.google.com/drive/folders/1QewXGKkKwYNtfRjY2wc4FyXY4E6npbT5?usp=drive_link"target="_blank"><button>View</button></a>
+        </div>
+        <div class="subject-container">
+            <i class="fa fa-folder-open" aria-hidden="true"></i>
+            <h1>ITE 048</h1>
+            <a href="https://drive.google.com/drive/folders/1TJzjiX6X8w08hFl56YtmMzHmo5yW3wOZ?usp=drive_link" target="_blank"><button>View</button></a>
+        </div>
+        <div class="subject-container">
+            <i class="fa fa-folder-open" aria-hidden="true"></i>
+            <h1>ITE 083</h1>
+            <a href="https://drive.google.com/drive/folders/1fXrbtigsOENL7-GHLP3ayWcVCoixWxr9?usp=drive_link" target="_blank"><button>View</button></a>
+        </div>
+        <div class="subject-container">
+            <i class="fa fa-folder-open" aria-hidden="true"></i>
+            <h1>ITE 302</h1>
+            <a href="https://drive.google.com/drive/folders/1x9duca_TSqTCnGwefzz5Ru6NBk1Iw9-K?usp=drive_link" target="_blank"><button>View</button></a>
+        </div>
+        <div class="subject-container">
+            <i class="fa fa-folder-open" aria-hidden="true"></i>
+            <h1>ITE 359</h1>
+            <a href="https://drive.google.com/drive/folders/1lhh3hjWs3qMjZps-gQJYH2E_R5Bxbk8C?usp=drive_link" target="_blank"><button>View</button></a>
+        </div>
+        <div class="subject-container">
+            <i class="fa fa-folder-open" aria-hidden="true"></i>
+            <h1>ITE 307</h1>
+            <a href="https://drive.google.com/drive/folders/1e1cQ36TmcFlODXQCBe7xQdXHymMloHWA?usp=drive_link" target="_blank"><button>View</button></a>
+        </div>
+        <div class="subject-container">
+            <i class="fa fa-folder-open" aria-hidden="true"></i>
+            <h1>ITE 353</h1>
+            <a href="https://drive.google.com/drive/folders/1_ysUgcg74vrlEhLJoxAVOatkXSAJIjX5?usp=drive_link" target="_blank"><button>View</button></a>
+        </div>
+        <div class="subject-container">
+            <i class="fa fa-folder-open" aria-hidden="true"></i>
+            <h1>ITE 314</h1>
+            <a href="https://drive.google.com/drive/folders/1ON4Ogmg8KeTTeNrdVEVkOsRTnVq__Wta?usp=drive_link" target="_blank"><button>View</button></a>
+        </div>
+        <div class="subject-container">
+            <i class="fa fa-folder-open" aria-hidden="true"></i>
+            <h1>ITE 387</h1>
+            <a href="https://drive.google.com/drive/folders/1BLYWA7QBnZwuqPwyU5Eg3xvq0eWWwsdr?usp=drive_link" target="_blank"><button>View</button></a>
+        </div>
+        <div class="subject-container">
+            <i class="fa fa-folder-open" aria-hidden="true"></i>
+            <h1>ITE 235</h1>
+            <a href="https://drive.google.com/drive/folders/1gxq2zOJBahcIncsHpA-E4r54VveYWne0?usp=sharing"target="_blank"><button>View</button></a>
+        </div>
+        <div class="subject-container">
+            <i class="fa fa-folder-open" aria-hidden="true"></i>
+            <h1>ITE 309</h1>
+            <a href="https://drive.google.com/drive/folders/1fNsT7cep_NW088Rlu3LV8hwqLazw4FmD?usp=sharing"target="_blank"><button>View</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="footer" id="contact">
+    <div class="footer-text"><h2>Contact Me</h2></div>
+    <div class="social">
+      <a href="https://facebook.com" target="_blank"><i class="fa fa-facebook-square"></i></a>
+      <a href="https://instagram.com" target="_blank"><i class="fa fa-instagram"></i></a>
+      <a href="mailto:loca.roma.au@phinmaed.com" target="_blank"><i class="fa fa-envelope-o"></i></a>
+      <a href="https://linkedin.com" target="_blank"><i class="fa fa-linkedin-square"></i></a>
+      <a href="https://twitter.com" target="_blank"><i class="fa fa-twitter-square"></i></a>
+    </div>
+    <ul class="list">
+        <li><a href="index.html#home">Home</a></li>
+      <li><a href="index.html#about">About Me</a></li>
+        <li><a href="index.html#education">Education</a></li>
+          <li><a href="index.html#skill">Skill Set</a></li>
+          <li><a href="sample.html">Sampled Work</a></li>
+          <li><a href="seminars.html#seminars">Seminars and Certifications</a></li>
+    </ul>
+    <div class="copyright">
+      <p><span>LORRAINE ROMA</span> — ALL RIGHTS RESERVED FOR 2023</p>
+    </div>
+  </section>
+
+  <script>
+    function toggleDropdown() {
+      const dropdown = document.getElementById("aboutDropdown");
+      dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+    }
+
+    window.onclick = function(e) {
+      if (!e.target.matches('.dropdown > a')) {
+        const dropdown = document.getElementById("aboutDropdown");
+        if (dropdown) dropdown.style.display = "none";
+      }
+    }
+  </script>
+
+</body>
+</html>

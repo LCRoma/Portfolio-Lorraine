@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="seminars.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <title>Seminars and Workshops</title>
+</head>
+<script>
+    function toggleDropdown() {
+      const dropdown = document.getElementById("aboutDropdown");
+      dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+    }
+  
+    // Optional: click outside to close
+    window.onclick = function(e) {
+      if (!e.target.matches('.dropdown > a')) {
+        const dropdown = document.getElementById("aboutDropdown");
+        if (dropdown) dropdown.style.display = "none";
+      }
+    }
+  </script>
+<body>
+    <nav>
+        <div class="imglogo">
+          <img src="img/roma.png" alt="Logo">
+        </div>
+        <ul>
+          <li><a href="index.html#home">Home</a></li>
+      
+          <!-- Dropdown -->
+          <li class="dropdown">
+            <a href="javascript:void(0);" onclick="toggleDropdown()">About</a>
+            <ul class="dropdown-content" id="aboutDropdown">
+              <li><a href="index.html#about">About Me</a></li>
+              <li><a href="index.html#education">Education</a></li>
+              <li><a href="index.html#skill">Skill Set</a></li>
+              <li><a href="sample.html">Sampled Work</a></li>
+              <li><a href="seminars.html#seminars">Seminars and Certifications</a></li>
+            </ul>
+          </li>
+      
+          <li><a href="index.html#contact">Contact Me</a></li>
+        </ul>
+      </nav>
+<section id="seminar">
+    <div class="seminars">
+        <h2> Seminars and Certifications</h2>
+        <div class="tesda">
+            <h1>TESDA CSS</h1>
+            <div class="tesda-certs">
+                <img src="img/TESDA1.png">
+                    <img src="img/TESDA2.png">
+                    <img src="img/TESDA3.png">
+                    <img src="img/TESDA4.png">
+                    <img src="img/TESDA5.png">
+                    <img src="img/TESDA6.png">
+            </div>
+        </div>
+        <div class="ignite">
+            <h1>IGNITE: Tech Talk 2023</h1>
+            <div class="ignite-certs">
+                <img src="img/tech1.jpg">
+                <img src="img/tech2.jpg">
+                <img src="img/tech3.jpg">
+            </div>
+        </div>
+        <div class="oracle">
+            <h1>Oracle Academy Certification</h1>
+            <div class="oracle-cert">
+                <img src="img/oracle.png">
+            </div>
+        </div>
+
+        <div class="aws">
+            <h1>AWS Academy Certification</h1>
+            <div class="aws-certs">
+              <img src="img/aws1.png" alt="AWS Certificate 1">
+              <img src="img/aws2.png" alt="AWS Certificate 2">
+              <img src="img/aws3.png" alt="AWS Certificate 3">
+              <img src="img/awsb3.png" alt="AWS Certificate 3">
+              <img src="img/awsb2.png" alt="AWS Certificate 2">
+              <img src="img/awsb1.png" alt="AWS Certificate 1">
+            </div>
+
+          </div>
+          <div class="tesda-ncii">
+            <h1>TESDA NCII Certificate</h1>
+            <img src="img/tesdancii.png" alt="TESDA NCII Certificate">
+          </div>
+          
+          <div class="salesforce">
+            <h1>Salesforce Trailhead</h1>
+            <div class="salesforce-certs">
+                <img src="img/superset.png" alt="Salesforce Certificate 4">
+              <img src="img/S1.png" alt="Salesforce Certificate 1">
+              <img src="img/S2.png" alt="Salesforce Certificate 2">
+              <img src="img/S3.png" alt="Salesforce Certificate 3">
+            </div>
+          </div>
+          
+    </div>
+</section>
+
+<section class="footer" id="contact">
+    <div class="footer-text"><h2>Contact Me</h2></div>
+    <div class="social">
+      <a href="https://www.facebook.com/lorraine.roma.9/" target="_blank"><i class="fa fa-facebook-square"></i></a>
+      <a href="https://www.instagram.com/wowaine_roma/" target="_blank"><i class="fa fa-instagram"></i></a>
+      <a href="mailto:loca.roma.au@phinmaed.com" target="_blank"><i class="fa fa-envelope-o"></i></a>
+      <a href="https://www.linkedin.com/in/lorraine-candelaria-roma-3b764b303/" target="_blank"><i class="fa fa-linkedin-square"></i></a>
+      <a href="https://twitter.com/LorraineRo75820" target="_blank"><i class="fa fa-twitter-square"></i></a>
+    </div>
+    <ul class="list">
+      <li><a href="index.html#home">Home</a></li>
+      <li><a href="index.html#about">About Me</a></li>
+      <li><a href="index.html#skill">Skill Set</a></li>
+      <li><a href="sample.html">Sample Worked</a></li>
+      <li><a href="index.html#education">Education</a></li>
+      <li><a href="seminars.html#seminars">Seminars and Certifications</a></li>
+    </ul>
+    <div class="copyright">
+      <p><span>LORRAINE ROMA</span> — ALL RIGHTS RESERVED FOR 2023</p>
+    </div>
+  </section>
+
+  
+</body>
+</html>
