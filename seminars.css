@@ -364,3 +364,70 @@ nav {
     font-size: 13px;
     color: #39362A;
 }
+
+/* Responsive Nav */
+#nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    display: none;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    position: relative;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    display: block;
+    background-color: #F3CD18;
+    height: 3px;
+    width: 100%;
+    border-radius: 2px;
+    position: absolute;
+    transition: all 0.3s ease;
+}
+
+.nav-toggle-label span::before {
+    content: '';
+    top: -8px;
+}
+
+.nav-toggle-label span::after {
+    content: '';
+    top: 8px;
+}
+
+@media (max-width: 768px) {
+    .nav-toggle-label {
+        display: block;
+    }
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: #39362A;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+    }
+    #nav-toggle:checked ~ ul {
+        display: flex;
+    }
+    nav ul li {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+    .dropdown-content {
+        position: static;
+        background-color: transparent;
+        min-width: unset;
+        width: 100%;
+        text-align: center;
+    }
+}
