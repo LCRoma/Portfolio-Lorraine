@@ -72,7 +72,7 @@ nav .nav-links li a:active{
     overflow-x: hidden; 
 }
 .responsive-img {
-    width: 100%;
+    width: 102%;
     height: auto;
     margin: 0;
     padding: 0;
@@ -83,8 +83,11 @@ nav .nav-links li a:active{
 }
 .homecon button {
     right: 5% !important; /* Adjusted to be more responsive */
-}
-button {
+    bottom: 50px;
+    max-width: 200px; /* Prevent button from getting too wide */
+    overflow: hidden; /* Prevent text overflow */
+    white-space: nowrap; /* Keep text on one line */
+    text-overflow: ellipsis; /* Add ellipsis if text overflows */
     padding: 1.3em 3em;
     font-size: 12px;
     text-transform: uppercase;
@@ -101,8 +104,8 @@ button {
     float: right;
     position: absolute;
     z-index: 2;
-  right: 15%; /* Original value, will be overridden by .homecon button */
-  bottom: 90px;
+    right: 15%; /* Original value, will be overridden by .homecon button */
+    bottom: 10px;
   }
   
   button:hover {
