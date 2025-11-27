@@ -456,6 +456,16 @@ button:active {
     font-size: 14px;
     padding: 8px 12px;
   }
+
+  .social {
+    flex-wrap: wrap; /* Allow icons to wrap */
+    gap: 10px;
+  }
+
+  .footer ul li {
+    display: block; /* Stack links vertically */
+    margin: 10px 0; /* Add vertical spacing */
+  }
 }
 
 @media (max-width: 480px) {
@@ -668,6 +678,7 @@ button:active {
 .social {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 .social a {
   text-decoration: none;
