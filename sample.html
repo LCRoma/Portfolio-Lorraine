@@ -240,6 +240,7 @@
         width: 30px;
         height: 30px;
         position: relative;
+        margin-top: 10px; /* Added padding to the top */
     }
 
     .nav-toggle-label span,
@@ -294,26 +295,17 @@
 
   <nav>
     <input type="checkbox" id="nav-toggle">
-    <div class="imglogo">
-      <img src="img/roma.png" alt="Logo">
-    </div>
-    <ul>
-      <li><a href="index.html#home">Home</a></li>
-      <li class="dropdown">
-        <a href="javascript:void(0);" onclick="toggleDropdown()">About</a>
-        <ul class="dropdown-content" id="aboutDropdown">
-          <li><a href="index.html#about">About Me</a></li>
-          <li><a href="index.html#education">Education</a></li>
-          <li><a href="index.html#skill">Skill Set</a></li>
-          <li><a href="sample.html">Sampled Work</a></li>
-          <li><a href="seminars.html#seminars">Seminars and Certifications</a></li>
-        </ul>
-      </li>
-      <li><a href="index.html#contact">Contact Me</a></li>
-    </ul>
     <label for="nav-toggle" class="nav-toggle-label">
         <span></span>
     </label>
+    <div class="imglogo">
+      <img src="img/roma.png" alt="Logo">
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html#home">Home</a></li>
+      <li><a href="index.html#about">About Me</a></li>
+      <li><a href="index.html#contact">Contact Me</a></li>
+    </ul>
   </nav>
 
   <div class="page-wrapper">

@@ -376,6 +376,7 @@ nav {
     width: 30px;
     height: 30px;
     position: relative;
+    margin-top: 20px; /* Added padding to the top */
 }
 
 .nav-toggle-label span,
